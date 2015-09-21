@@ -75,13 +75,7 @@ class RemovePunctuationTest(TestCase):
         test_string = '<a href title="stuff">some text</a></br>'
         result = remove_punctuation(test_string)
         self.assertEqual(result, '<a href titlestuff>some text<a><br>')
-
         
-class GetPageWordsTest(TestCase):
-    def test(self):
-        url = 'https://en.wikipedia.org/wiki/Logistic_function'
-        self.assertIsNotNone(get_page_words(url, parse_html_simple))
-
 
 if __name__ == '__main__':
     unittest.main()

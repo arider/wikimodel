@@ -1,6 +1,8 @@
 from wiki_scraper import crawl_page
 from multiprocessing import Pool
 
+PATH = 'wikimodel/'
+
 
 def call_scraper(args):
     domain = args[0]
@@ -31,8 +33,8 @@ def scrape(domains, links):
     # save the data so that we don't have
     # to put a bunch of load on wikipedia's servers if we run again.
     import pickle
-    pickle.dump(categories, open("categories.pickle", "wb"))
-    pickle.dump(link_edges, open("link_edges.pickle", "wb"))
+    pickle.dump(categories, open(PATH + "categories.pickle", "wb"))
+    pickle.dump(link_edges, open(PATH + "link_edges.pickle", "wb"))
 
 
 def scrape_wikipedia():
